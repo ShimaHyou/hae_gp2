@@ -6,48 +6,18 @@
 #include <string>
 #include "Vect2T.h"
 #include "Vec2.hpp"
+#include "MyTab.h"
 
 using namespace std;
 
 
 int main()
 {
-	Vec2 toto(66,67);
+	MyTab<int>* foo = new MyTab<int>(4);
 
-	Vec2T<int> t0(45, 4);
-	Vec2T<int> t1(4, 4);
+	cout << foo->get(0) << endl;
 
-	auto tres = t1.Add(t0);
-
-    std::cout << "Hello World!\n"; 
-
-	Vec2T<char> vc0('a', 'b');
-	Vec2T<char> vc1('d', 'e');
-
-	auto vcres = vc1.Add(vc0);
-
-	cout << string(1, 'a') << endl;
-	cout << string(1, vcres.x) << "" << string(1, vcres.y) << endl;
-
-	int tab[] = { 0,1,2,3 };
-	int sztab = sizeof(tab) / sizeof(int);
-
-	for (int i = 0; i < sztab; i++) 
-	{
-		cout << tab[1];
-	}
-
-	int* c0 = tab;
-	int* c1 = &(tab[0]);
-
-	int valc = *c0++;
-
-	Vec2 sapin(56, 70);
-	Vec2 sapin2(88, 88);
-
-	sapin.incr(sapin2);
-
-	cout << to_string(sapin2.x) << endl;
+	delete foo;
 
 	cout << endl;
 }
